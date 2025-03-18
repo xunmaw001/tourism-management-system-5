@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.DiscussjiudianyuyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.DiscussjiudianyuyueEntity" id="discussjiudianyuyueMap">
+        <result property="refid" column="refid"/>
+        <result property="content" column="content"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.DiscussjiudianyuyueVO" >
+		SELECT * FROM discussjiudianyuyue  discussjiudianyuyue         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.DiscussjiudianyuyueVO" >
+		SELECT  discussjiudianyuyue.* FROM discussjiudianyuyue  discussjiudianyuyue
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.DiscussjiudianyuyueView" >
+
+		SELECT  discussjiudianyuyue.* FROM discussjiudianyuyue  discussjiudianyuyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.DiscussjiudianyuyueView" >
+		SELECT * FROM discussjiudianyuyue  discussjiudianyuyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>

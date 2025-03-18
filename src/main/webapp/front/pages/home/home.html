@@ -1,0 +1,303 @@
+
+<!-- 首页 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>home page</title>
+		<link rel="stylesheet" href="../../layui/css/layui.css">
+		<!-- 样式 -->
+		<link rel="stylesheet" href="../../css/style.css" />
+		<!-- 主题（主要颜色设置） -->
+		<link rel="stylesheet" href="../../css/theme.css" />
+		<!-- 通用的css -->
+		<link rel="stylesheet" href="../../css/common.css" />
+	</head>
+	<body>
+
+		<div id="app">
+			<!-- 轮播图 -->
+			<div class="layui-carousel" id="swiper">
+				<div carousel-item id="swiper-item">
+					<div v-for="(item,index) in swiperList" v-bind:key="index">
+						<img class="swiper-item" :src="item.img">
+					</div>
+				</div>
+			</div>
+			<!-- 轮播图 -->
+
+			
+                                                                                                                                                                                                                                                                                                                                                                                                                        
+            
+			
+															<!-- 图文列表 -->
+			<div class="data-container layui-row">
+				<h2 class="index-title"> List of Scenic Spots </h2>
+				<div class="data-list layui-col-md12">
+					<div v-for="(item,index) in jingdianjieshaoList" v-if="index==0" @click="jump('../jingdianjieshao/detail.html?id='+item.id)" class="data-item layui-col-md6 big" >
+						                        						                        						                        						                        						                        						                        						
+						<img class="cover" :src="item.jingdianzhaopian?item.jingdianzhaopian.split(',')[0]:''">
+						
+						                        						
+						<h3 class="title">{{item.jingdianmingcheng}}</h3>
+						
+												                        						                        						                        						                        						                        						                        						                        						                        						                        						                        						                        																		                        						                        						                        						                        						                        						                        											</div>
+					<div class="layui-col-md6" >
+						<div v-for="(item,index) in jingdianjieshaoList" v-if="index!=0" @click="jump('../jingdianjieshao/detail.html?id='+item.id)" class="data-item layui-col-md6 small" >
+																																																																																											
+							<img class="cover" :src="item.jingdianzhaopian?item.jingdianzhaopian.split(',')[0]:''">
+							
+																					
+							<h3 class="title">{{item.jingdianmingcheng}}</h3>
+							
+																																																																																																																																																																																																																																																																																</div>
+					</div>
+				</div>
+				<div style="text-align: center;margin-top: 20px;">
+					<button @click="jump('../jingdianjieshao/list.html')" type="button" class="layui-btn layui-btn-primary">view more>></button>
+				</div>
+			</div>
+			<!-- 图文列表 -->
+												<!-- 图文列表 -->
+			<div class="data-container layui-row">
+				<h2 class="index-title"> Route Recommendation list </h2>
+				<div class="data-list layui-col-md12">
+					<div v-for="(item,index) in luxiantuijianList" v-if="index==0" @click="jump('../luxiantuijian/detail.html?id='+item.id)" class="data-item layui-col-md6 big" >
+						                        						                        						                        						                        						                        						                        						                        						                        						                        						
+						<img class="cover" :src="item.gonglvefengmian?item.gonglvefengmian.split(',')[0]:''">
+						
+						                        						
+						<h3 class="title">{{item.gonglvebiaoti}}</h3>
+						
+												                        						                        						                        						                        						                        						                        						                        						                        						                        						                        						                        						                        						                        																		                        						                        						                        						                        						                        											</div>
+					<div class="layui-col-md6" >
+						<div v-for="(item,index) in luxiantuijianList" v-if="index!=0" @click="jump('../luxiantuijian/detail.html?id='+item.id)" class="data-item layui-col-md6 small" >
+																																																																																																																																					
+							<img class="cover" :src="item.gonglvefengmian?item.gonglvefengmian.split(',')[0]:''">
+							
+																					
+							<h3 class="title">{{item.gonglvebiaoti}}</h3>
+							
+																																																																																																																																																																																																																																																																																														</div>
+					</div>
+				</div>
+				<div style="text-align: center;margin-top: 20px;">
+					<button @click="jump('../luxiantuijian/list.html')" type="button" class="layui-btn layui-btn-primary">view more>></button>
+				</div>
+			</div>
+			<!-- 图文列表 -->
+												<!-- 图文列表 -->
+			<div class="data-container layui-row">
+				<h2 class="index-title"> List of Featured products </h2>
+				<div class="data-list layui-col-md12">
+					<div v-for="(item,index) in tesechanpinList" v-if="index==0" @click="jump('../tesechanpin/detail.html?id='+item.id)" class="data-item layui-col-md6 big" >
+						                        						                        						                        						                        						
+						<img class="cover" :src="item.techanzhaopian?item.techanzhaopian.split(',')[0]:''">
+						
+						                        						
+						<h3 class="title">{{item.techanmingcheng}}</h3>
+						
+												                        						                        						                        						                        						                        						                        						                        						                        																		                        						                        						                        						                        						                        											</div>
+					<div class="layui-col-md6" >
+						<div v-for="(item,index) in tesechanpinList" v-if="index!=0" @click="jump('../tesechanpin/detail.html?id='+item.id)" class="data-item layui-col-md6 small" >
+																																																															
+							<img class="cover" :src="item.techanzhaopian?item.techanzhaopian.split(',')[0]:''">
+							
+																					
+							<h3 class="title">{{item.techanmingcheng}}</h3>
+							
+																																																																																																																																																																																																																								</div>
+					</div>
+				</div>
+				<div style="text-align: center;margin-top: 20px;">
+					<button @click="jump('../tesechanpin/list.html')" type="button" class="layui-btn layui-btn-primary">view more>></button>
+				</div>
+			</div>
+			<!-- 图文列表 -->
+												<!-- 图文列表 -->
+			<div class="data-container layui-row">
+				<h2 class="index-title"> Hotel Reservation List </h2>
+				<div class="data-list layui-col-md12">
+					<div v-for="(item,index) in jiudianyuyueList" v-if="index==0" @click="jump('../jiudianyuyue/detail.html?id='+item.id)" class="data-item layui-col-md6 big" >
+						                        						                        						                        						                        						                        						                        						                        						                        						
+						<img class="cover" :src="item.jiudianzhaopian?item.jiudianzhaopian.split(',')[0]:''">
+						
+						                        						
+						<h3 class="title">{{item.jiudianmingcheng}}</h3>
+						
+												                        						                        						                        						                        						                        						                        						                        						                        						                        						                        						                        																		                        						                        						                        						                        											</div>
+					<div class="layui-col-md6" >
+						<div v-for="(item,index) in jiudianyuyueList" v-if="index!=0" @click="jump('../jiudianyuyue/detail.html?id='+item.id)" class="data-item layui-col-md6 small" >
+																																																																																																																							
+							<img class="cover" :src="item.jiudianzhaopian?item.jiudianzhaopian.split(',')[0]:''">
+							
+																					
+							<h3 class="title">{{item.jiudianmingcheng}}</h3>
+							
+																																																																																																																																																																																																																																																				</div>
+					</div>
+				</div>
+				<div style="text-align: center;margin-top: 20px;">
+					<button @click="jump('../jiudianyuyue/list.html')" type="button" class="layui-btn layui-btn-primary">view more>></button>
+				</div>
+			</div>
+			<!-- 图文列表 -->
+																																																																											
+
+			
+																																																																											<!-- 景点资讯 -->
+			<div class="news-container">
+				<div class="news-list">
+					<div v-for="(item,index) in newsList" v-bind:key="index" href="javascript:void(0);" @click="jump('../news/detail.html?id='+item.id);"
+					 class="news-item">
+						<div class="cover-container">
+							<img class="cover" :src="item.picture">
+						</div>
+						<div class="detail-container">
+							<h2 class="h2">{{item.title}}</h2>
+							<div class="desc">
+								{{item.content|newsDesc}}...
+							</div>
+							<div class="create-time">
+								{{item.addtime}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 景点资讯 -->
+																																	
+
+		</div>
+
+		<script src="../../layui/layui.js"></script>
+		<script src="../../js/vue.js"></script>
+		<!-- 组件配置信息 -->
+		<script src="../../js/config.js"></script>
+		<!-- 扩展插件配置信息 -->
+		<script src="../../modules/config.js"></script>
+		<!-- 工具方法 -->
+		<script src="../../js/utils.js"></script>
+
+		<script>
+			var vue = new Vue({
+				el: '#app',
+				data: {
+                    
+                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+                    
+					                                                                                jingdianjieshaoList: [],
+                                                                                luxiantuijianList: [],
+                                                                                tesechanpinList: [],
+                                                                                jiudianyuyueList: [],
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+
+                    // 轮播图
+					swiperList: [{
+						img: '../../img/banner.jpg'
+					}],
+					// 景点资讯
+					newsList: []
+				},
+				filters: {
+					newsDesc: function(val) {
+						if (val) {
+							if (val.length > 60) {
+								return val.substring(0, 60).replace(/<[^>]*>/g).replace(/undefined/g, '');
+							} else {
+								return val.replace(/<[^>]*>/g).replace(/undefined/g, '');
+							}
+						}
+						return '';
+					}
+				},
+				methods: {
+					jump(url) {
+						jump(url)
+					}
+				}
+			})
+
+			layui.use(['layer', 'form', 'element', 'carousel', 'http', 'jquery'], function() {
+				var layer = layui.layer;
+				var element = layui.element;
+				var form = layui.form;
+				var carousel = layui.carousel;
+				var http = layui.http;
+				var jquery = layui.jquery;
+
+				// 获取轮播图 数据
+				http.request('config/list', 'get', {
+					page: 1,
+					limit: 5
+				}, function(res) {
+					if (res.data.list.length > 0) {
+						var swiperItemHtml = '';
+						for (let item of res.data.list) {
+							if (item.name.indexOf('picture') >= 0 && item.value && item.value != "" && item.value != null) {
+								swiperItemHtml +=
+									'<div>' +
+									'<img class="swiper-item" src="' + item.value + '">' +
+									'</div>';
+							}
+						}
+						jquery('#swiper-item').html(swiperItemHtml);
+						// 轮播图
+						carousel.render({
+							elem: '#swiper',
+							width: swiper.width,height:swiper.height,
+							arrow: swiper.arrow,
+							anim: swiper.anim,
+							interval: swiper.interval,
+							indicator: swiper.indicator
+						});
+					}
+				});
+                
+                
+				                                                                                                                                                                                                                                                                                                                                                                                                // 景点资讯
+				http.request('news/list', 'get', {
+					page: 1,
+					limit: 8
+				}, function(res) {
+					vue.newsList = res.data.list;
+				});
+                                                                                                                                                                                
+                
+                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+				
+                
+                                                                                http.request(`jingdianjieshao/list?limit=5`, 'get', {
+					page: 1,
+					limit: 5
+				}, function(res) {
+					vue.jingdianjieshaoList = res.data.list
+				});
+                                                                http.request(`luxiantuijian/list?limit=5`, 'get', {
+					page: 1,
+					limit: 5
+				}, function(res) {
+					vue.luxiantuijianList = res.data.list
+				});
+                                                                http.request(`tesechanpin/list?limit=5`, 'get', {
+					page: 1,
+					limit: 5
+				}, function(res) {
+					vue.tesechanpinList = res.data.list
+				});
+                                                                http.request(`jiudianyuyue/list?limit=5`, 'get', {
+					page: 1,
+					limit: 5
+				}, function(res) {
+					vue.jiudianyuyueList = res.data.list
+				});
+                                                                                                                                                                                                                                                                                                                                                                                                                
+				
+			});
+		</script>
+	</body>
+</html>
